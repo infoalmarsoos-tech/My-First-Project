@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | SmartCampus AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0f2c; /* Main Premium Navy Blue */
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --gold: #FFD700;
+            --text-light: #ecf0f1;
+            --text-dark: #b0bec5;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- Header / Navbar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(8, 16, 51, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,215,0,0.1);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* --- Banner Section --- */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Banner height */
+            background-image: linear-gradient(rgba(10, 15, 44, 0.7), rgba(10, 15, 44, 0.9)), 
+                              url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070'); /* Professional team image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 10%;
+            box-sizing: border-box;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-dark);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gold);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* --- Courses/Services Section --- */
+        .courses-section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 10px auto 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,215,0,0.1);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        }
+
+        .course-icon {
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .course-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .course-card p {
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 30px;
+            background: rgba(8, 16, 51, 1);
+            text-align: center;
+            border-top: 1px solid rgba(255,215,0,0.1);
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 10px; }
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { font-size: 16px; }
+            .hero-banner { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">SmartCampus AI</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Welcome to <br><span>SmartCampus AI</span></h1>
+            <p>A new era of educational management and professional skill development. Join us to transform your future.</p>
+            <a href="#" class="btn-gold">Explore Courses</a>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <h2 class="section-title">Our Premium Courses</h2>
+
+        <div class="courses-grid">
+            <div class="course-card">
+                <i class="fas fa-code course-icon"></i>
+                <h3>Web Development</h3>
+                <p>Learn to build modern, responsive, and powerful web applications from scratch.</p>
+            </div>
+
+            <div class="course-card">
+                <i class="fas fa-paint-brush course-icon"></i>
+                <h3>Graphic Designing</h3>
+                <p>Master the art of visual storytelling using industry-standard design tools and techniques.</p>
+            </div>
+
+            <div class="course-card">
+                <i class="fas fa-bullhorn course-icon"></i>
+                <h3>Digital Marketing</h3>
+                <p>Strategies to grow brands, reach larger audiences, and drive business success online.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © SmartCampus AI 2023. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
